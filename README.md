@@ -119,10 +119,12 @@ right_fit_cr = np.polyfit(np.array(right_ys)*ym_per_pix, np.array(right_xs)*xm_p
 left_curverad =  ((1 + (2*left_fit_cr[0] *y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5)  / np.absolute(2*left_fit_cr[0])
 right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])**2)**1.5) / np.absolute(2*right_fit_cr[0])
 rad = (left_curverad + right_curverad) /2 # radius
-my_center_x = 1280 / 2
-lane_center_x = right_xs[1] - left_xs[1]  
-center_distance = my_center_x - lane_center_x
-offset = xm_per_pix * center_distance
+
+lane_center_x = right_xs[1] - left_xs[1]
+my_center_x =  img.shape[1]/2
+offset = (my_center_x - lane_center_x) * xm_per_pix
+    
+
 ```
 For calculating the center offset, it's being assumed that the car's camera is positioned at the center of the car.
 
@@ -145,4 +147,7 @@ Here's a [link to my video result](./output_project_video.mp4).
 
 ### Discussion
 
-
+Lane detection and overlay can be made more smooth.
+Logic to skip histogram search altogether once confident lanes are detected in subsequent frames.
+Algorithm needs to be improved for detecting lanes in varying light conditions.
+Look Ahead can be made more dynamic to accurately detect sharp turns on winding roads.
