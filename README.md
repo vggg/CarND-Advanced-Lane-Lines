@@ -1,6 +1,5 @@
 ## Writeup Template
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
@@ -22,7 +21,7 @@ The goals / steps of this project were the following:
 [undistorted]: ./writeup/undistorted.png "Undistorted"
 [undistorted2]: ./writeup/undistorted2.png "Undistorted"
 [threshold]: ./writeup/threshold.png "Thresholding"
-[lineident]: ./writeup/line_ident.png "Line identification"
+[lineident]: ./writeup/lineident.png "Line identification"
 
 [transform]: ./writeup/transform.png "Perspective transform"
 [backprojected]: ./writeup/backprojected.png "Projected back"
